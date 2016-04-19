@@ -1,0 +1,95 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : 06-Aug-2015, 17:38:21
+    Author     : Box
+*/
+
+
+body{
+    background: url("images/background.jpg") no-repeat center center fixed; 
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+
+.container.myContainer{
+    padding:2em;
+    width:96%;
+    min-height: 60%;
+    margin:auto;
+    background-color: white;  
+}
+
+#tblTransakcije{
+    width: 300px;
+}
+
+#tblTransakcije input[type="text"]{
+    width:100px;
+}
+#payment{
+    padding:20px;
+}
+#articlePicture{
+    margin:10px;
+}
+/*Categories*/
+
+#categories{
+    background-color: whitesmoke;  
+    margin-bottom: 20px;
+    padding-top:15px;
+}/*
+
+
+/*Header*/
+
+.page-header.myHeader{
+    padding-top: 1.3em;
+    padding-left: 1.8em;
+    background-color:#333333;  
+    font-size: 16px;
+    margin:0px;
+
+}
+.page-header.myHeader a:link{
+    color:whitesmoke;
+}
+.page-header.myHeader a:visited{
+    color:whitesmoke;
+}
+.form-wrapper-bd{
+    margin-top: 6em;
+    width: 20%;
+}
+.form-wrapper-bd.left{
+    float:left;
+    margin-left: 14em;
+}
+.form-wrapper-bd.right{
+    float:right;
+    margin-right: 14em;
+}
+
+.btn-default.pay{
+    width:100px;
+}
+.form-control.button{
+    margin-top: 1.5em;
+    margin-bottom: 3em;
+    background-color: whitesmoke;
+    font-weight: bold;
+}
+.headerElementLeft{    
+    margin-left: 19%;
+}
+.headerElementRight{
+    margin-left: 38%;
+}
+
+
