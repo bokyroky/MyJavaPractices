@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Database connection</title>
+<link rel="stylesheet" type="text/css"
+	href="Content/css/bootstrap.min.css" />
+</head>
+<body>
+	<div style="width: 15em; margin: 6em auto auto auto">
+		<fieldset style="padding-left: 2em">
+			<form action="employees" id="connForm" method="get">
+				<div>
+					<label>Server name: </label>
+				</div>
+				<div>
+					<input type="text" name="serverName" value="localhost" />
+				</div>
+				<div>
+					<label>User name: </label>
+				</div>
+				<div>
+					<input type="text" name="username" value="sa" />
+				</div>
+				<div>
+					<label>Password: </label>
+				</div>
+				<div>
+					<input type="password" name="password" />
+				</div>
+				<div>
+					<input type="submit" value="Connect" />
+				</div>
+
+			</form>
+		</fieldset>
+	</div>
+	<script src="scripts/jQuery/jquery-1.12.1.min.js"></script>
+	<script src="scripts/bootstrap.min.js"></script>
+</body>
+<script type="text/javascript">
+$(document).ready(function() {
+	$("input").css({"margin-bottom":"1em"});
+	$("input[type='submit']").css({"background":"#fff8dc"});
+	$("input").addClass("form-control");
+	$('#connForm').submit(function() {
+	    
+		var emptyField = false;
+		$("input").each(function() {
+			if ($(this).val() == "") {
+				emptyField = true;
+				return false;
+			}
+		});
+		if (emptyField){
+			alert("Input data missing!")
+			return false;
+		}  
+	});
+})
+</script>
+</html>

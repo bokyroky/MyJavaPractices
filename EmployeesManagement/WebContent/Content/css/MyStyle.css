@@ -1,0 +1,25 @@
+@CHARSET "UTF-8";
+#lblInfo{
+	color:red;
+	margin-top:0.5em;
+}
+#divHeading{
+	margin-bottom:4em;
+}
+#divUserData{
+	margin-top:1em;
+	float: left; 
+	width: 35%
+}
+#divEmplPerDepartment{
+	float: right; 
+	width: 65%; 
+	padding-left: 3em; 
+	padding-top: 3.2em;
+}
+#hlNewEmployee{
+	margin-top:2em;
+}
+input[type="text"],select{
+	margin-bottom:1em;
+}
