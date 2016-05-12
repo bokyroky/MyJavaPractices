@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+	targetNamespace="http://spring.administration.ws" xmlns:tns="http://spring.administration.ws"
+	elementFormDefault="qualified">
+
+	<xs:element name="registerUserRequest">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="newUser" type="tns:user" />
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="registerUserResponse">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="registrationOutcome" type="xs:string" />
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="userListRequest">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="user" type="tns:user" maxOccurs="unbounded" />
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+
+	<xs:complexType name="user">
+		<xs:sequence>
+			<xs:element name="first_name" type="xs:string" />
+			<xs:element name="last_name" type="xs:string" />
+			<xs:element name="login" type="xs:string" />
+		</xs:sequence>
+	</xs:complexType>
+
+</xs:schema>
