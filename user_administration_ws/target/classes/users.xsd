@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
-	targetNamespace="http://spring.administration.ws" xmlns:tns="http://spring.administration.ws"
+	targetNamespace="http://spring.io/ws/administration"
+	xmlns:tns="http://spring.io/ws/administration"
 	elementFormDefault="qualified">
 
 	<xs:element name="registerUserRequest">
@@ -17,10 +18,17 @@
 			</xs:sequence>
 		</xs:complexType>
 	</xs:element>
-	<xs:element name="userListRequest">
+	<xs:element name="userListResponse">
 		<xs:complexType>
 			<xs:sequence>
 				<xs:element name="user" type="tns:user" maxOccurs="unbounded" />
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="userListRequest">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="listRequest" type="xs:string" fixed="REQUEST" />
 			</xs:sequence>
 		</xs:complexType>
 	</xs:element>
