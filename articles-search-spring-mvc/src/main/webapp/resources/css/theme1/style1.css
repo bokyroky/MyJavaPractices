@@ -1,0 +1,28 @@
+@CHARSET "UTF-8";
+#divContainer{
+	width:50%;
+	margin:auto;
+	font:1em Arial
+}
+#divContent{
+	padding: 2em;
+}
+#divHeader{
+	margin: auto;
+}
+.form-control-wrapper{
+	width:10em;
+	margin:2em;
+}
+.ctrl-left{
+	float:left;
+}
+.ctrl-right{
+	float:right;
+}
+
+.button-wrapper{
+	width: 2em; 
+	margin-left: 2em; 
+	float: left
+}

@@ -1,7 +1,5 @@
 package com.bd.myapp;
 
-
-
 import java.util.List;
 
 import org.slf4j.Logger;
@@ -24,8 +22,6 @@ public class ArticleController {
 
 	@Autowired
 	private SQLServerDBAccess dbAccess;
-
-	
 
 	/**
 	 * Simply selects the home view to render by returning its name.
@@ -58,6 +54,20 @@ public class ArticleController {
 	@ResponseBody
 	public String getArticleContent(@RequestParam("idArticle") String idArticle) {
 		return dbAccess.getArticleContent(idArticle);
+	}
+
+	@RequestMapping(value = "/contains", method = RequestMethod.GET,
+	produces = "application/text; charset=utf-8")
+	@ResponseBody
+	public String containsSubstring(@RequestParam("articleContent") String articleContent,
+			@RequestParam("subString") String subString) {
+		if( subString.equals(""))
+			return "0";
+		boolean contains = articleContent.contains(subString);
+		if(contains)
+			return "1";
+		else return "0";
+
 	}
 
 }
