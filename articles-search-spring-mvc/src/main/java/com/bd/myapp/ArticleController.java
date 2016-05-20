@@ -33,9 +33,10 @@ public class ArticleController {
 			model.addAttribute("articleList", articles);
 		}
 
-		return "home";
+		return "article";
 	}
 
+	// saving article to db
 	@RequestMapping(value = "/", method = RequestMethod.POST)
 	public String saveArticle(@RequestParam("articleText") String articleText,
 			@RequestParam("articleTitle") String articleTitle) {
@@ -46,27 +47,34 @@ public class ArticleController {
 			dbAccess.insertArticle(article);
 
 		}
-
 		return "redirect:/";
 	}
 
-	@RequestMapping(value = "/articleNo", method = RequestMethod.GET)
+	// fetching certain article using it's identifier
+	@RequestMapping(value = "/article", method = RequestMethod.GET)
 	@ResponseBody
 	public String getArticleContent(@RequestParam("idArticle") String idArticle) {
+		if (idArticle.equals("NONE")) {
+			return "";
+		}
 		return dbAccess.getArticleContent(idArticle);
 	}
 
-	@RequestMapping(value = "/contains", method = RequestMethod.GET,
-	produces = "application/text; charset=utf-8")
+	// checking if some text exists in article, simulating boolean return type
+	@RequestMapping(value = "/contains", method = RequestMethod.GET, produces = "application/text; charset=utf-8")
 	@ResponseBody
 	public String containsSubstring(@RequestParam("articleContent") String articleContent,
 			@RequestParam("subString") String subString) {
-		if( subString.equals(""))
+		//checking if text we are looking for exists at all
+		if (subString.equals("")) {
 			return "0";
+		}
+		//then we check if it is part of the article
 		boolean contains = articleContent.contains(subString);
-		if(contains)
+		if (contains)
 			return "1";
-		else return "0";
+		else
+			return "0";
 
 	}
 

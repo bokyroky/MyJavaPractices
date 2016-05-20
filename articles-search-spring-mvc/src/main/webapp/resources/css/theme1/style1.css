@@ -2,9 +2,10 @@
 #divContainer{
 	width:50%;
 	margin:auto;
-	font:1em Arial
+	font:1em Arial;
 }
 #divContent{
+	font-family:Segoe UI;
 	padding: 2em;
 }
 #divHeader{

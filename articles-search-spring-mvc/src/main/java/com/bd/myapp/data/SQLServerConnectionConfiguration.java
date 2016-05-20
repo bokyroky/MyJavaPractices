@@ -7,7 +7,7 @@ import org.springframework.jdbc.datasource.DriverManagerDataSource;
 
 
 @Configuration
-public class SQLServerConnectionConfiguration {
+public class SQLServerConnectionConfiguration implements DBMSConnectionConfiguration {
     @Bean
     public DriverManagerDataSource dataSource() {
         DriverManagerDataSource dataSource = new org.springframework.jdbc.datasource.DriverManagerDataSource();
